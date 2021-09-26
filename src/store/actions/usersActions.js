@@ -9,6 +9,7 @@ import {
   SET_SORT_BY_ID,
   SET_SORT_BY_STRING,
   SET_SORT_BY_ADRESS_STATE,
+  SHOW_ALL_STATES,
 } from '../types';
 import fetchUsers from '../../api/fetchUsers';
 
@@ -64,6 +65,10 @@ export const filterByState = (state) => ({
 export const filterByFirstName = (fname) => ({
   type: FILTER_BY_FIRST_NAME,
   payload: fname,
+});
+
+export const showAllStates = () => ({
+  type: SHOW_ALL_STATES,
 });
 
 // thunk creator

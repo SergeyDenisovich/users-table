@@ -13,6 +13,7 @@ export const FilterPopup = ({ states, setFilterByState }) => {
 
   return (
     <ul onClick={handleStateClick} className={styles.popupBlock}>
+      <li onClick={() => setFilterByState('ALL')}>ALL</li>
       {states.map((state, index) => {
         return <li key={index}>{state}</li>;
       })}

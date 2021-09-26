@@ -1,10 +1,9 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import { ArrowButton } from '../ArrowButton/ArrowButton';
 import { setSortById, setSortByString, setSortByAdressState } from '../../store/actions/usersActions';
 import PropTypes from 'prop-types';
 import styles from './Table.module.css';
-import { useDispatch } from 'react-redux';
 
 export const Table = ({ users, showUserInfo, selectedUser }) => {
   const { sortBy } = useSelector((state) => state);

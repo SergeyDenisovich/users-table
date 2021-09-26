@@ -9,6 +9,7 @@ import {
   SET_SORT_BY_ID,
   SET_SORT_BY_STRING,
   SET_SORT_BY_ADRESS_STATE,
+  SHOW_ALL_STATES,
 } from '../types';
 
 const initialState = {
@@ -47,12 +48,13 @@ export const usersReducer = (state = initialState, action) => {
 
     case SET_CURRENT_USER_DATA: {
       const start = action.payload === 1 ? 0 : (action.payload - 1) * state.pageLimit + 1;
+      const end = action.payload * state.pageLimit + 1;
 
       return {
         ...state,
         currentPage: action.payload,
         selectedUser: null,
-        currentUsersData: state.filteredUsers.slice(start, action.payload * state.pageLimit + 1),
+        currentUsersData: state.filteredUsers.slice(start, end),
       };
     }
 
@@ -223,6 +225,16 @@ export const usersReducer = (state = initialState, action) => {
                   return 0;
                 })
                 .slice(start, end),
+      };
+    }
+
+    case SHOW_ALL_STATES: {
+      return {
+        ...state,
+        filteredUsers: state.allUsers,
+        currentPage: 1,
+        selectedUser: null,
+        currentUsersData: state.allUsers.slice(0, 20),
       };
     }
 

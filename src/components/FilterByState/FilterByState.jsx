@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux';
 import { ArrowButton } from '../ArrowButton/ArrowButton';
 import { FilterPopup } from '../FilterPopup/FilterPopup';
-import { filterByState } from '../../store/actions/usersActions';
+import { filterByState, showAllStates } from '../../store/actions/usersActions';
 import styles from './FilterByState.module.css';
 
 export const FilterByState = () => {
@@ -16,8 +16,13 @@ export const FilterByState = () => {
   };
 
   const setFilterByState = (state) => {
-    setVisiblePopup(false);
-    dispatch(filterByState(state));
+    if (state === 'ALL') {
+      setVisiblePopup(false);
+      dispatch(showAllStates());
+    } else {
+      setVisiblePopup(false);
+      dispatch(filterByState(state));
+    }
   };
 
   return (
