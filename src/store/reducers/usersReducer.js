@@ -101,7 +101,8 @@ export const usersReducer = (state = initialState, action) => {
     case SET_SORT_BY_ID: {
       const [field, order] = action.payload.split(' ');
       const start = state.currentPage === 1 ? 0 : (state.currentPage - 1) * state.pageLimit + 1;
-      const end = state.currentPage * state.pageLimit + 1;
+      const end =
+        state.currentPage === 1 ? state.currentPage * state.pageLimit : state.currentPage * state.pageLimit + 1;
 
       return {
         ...state,
@@ -120,8 +121,8 @@ export const usersReducer = (state = initialState, action) => {
     case SET_SORT_BY_STRING: {
       const [field, order] = action.payload.split(' ');
       const start = state.currentPage === 1 ? 0 : (state.currentPage - 1) * state.pageLimit + 1;
-      const end = state.currentPage * state.pageLimit + 1;
-
+      const end =
+        state.currentPage === 1 ? state.currentPage * state.pageLimit : state.currentPage * state.pageLimit + 1;
       return {
         ...state,
         sortBy: action.payload,
@@ -176,7 +177,8 @@ export const usersReducer = (state = initialState, action) => {
     case SET_SORT_BY_ADRESS_STATE: {
       const [field, order] = action.payload.split(' ');
       const start = state.currentPage === 1 ? 0 : (state.currentPage - 1) * state.pageLimit + 1;
-      const end = state.currentPage * state.pageLimit + 1;
+      const end =
+        state.currentPage === 1 ? state.currentPage * state.pageLimit : state.currentPage * state.pageLimit + 1;
 
       return {
         ...state,
