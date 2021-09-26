@@ -1,0 +1,15 @@
+.pageWrapper {
+  margin: 20px 0;
+  display: flex;
+}
+
+.page {
+  padding: 10px;
+  border: 1px solid black;
+  cursor: pointer;
+}
+
+.pageCurrent {
+  background-color: black;
+  color: white;
+}

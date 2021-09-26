@@ -1,0 +1,25 @@
+.usersTable {
+  margin: 10px 0;
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.usersTable thead span {
+  margin-right: 5px;
+}
+
+.usersTable td,
+.usersTable th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 5px;
+}
+
+.usersTable tr {
+  cursor: pointer;
+}
+
+.activeRow {
+  background-color: black;
+  color: white;
+}

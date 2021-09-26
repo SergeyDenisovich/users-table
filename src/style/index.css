@@ -1,0 +1,33 @@
+@import './normalize.css';
+
+* {
+  box-sizing: border-box;
+}
+
+.wrapper {
+  width: 100%;
+  max-width: 700px;
+  margin: 20px auto;
+}
+
+.fields {
+  display: flex;
+  justify-content: space-between;
+}
+
+.desc {
+  transform: rotate(180deg);
+}
+
+.loading-block {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: lightgray;
+}

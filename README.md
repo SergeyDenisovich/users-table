@@ -3,7 +3,7 @@
 ## Description:
 
 Users table with additional information about each user.
-In this app we can filtering data, click on rows to see more data about user,
+In this app we can find users by name, click on rows to see more data about user,
 sort columns by ascending and descending order, filter users by state
 
 ### `npm install`

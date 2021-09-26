@@ -1,0 +1,19 @@
+.userInfoBlock,
+.userInfoMessage {
+  padding: 10px;
+  border: 1px solid;
+  border-radius: 10px;
+}
+
+.userInfoMessage {
+  text-align: center;
+}
+
+.userInfoBlock h3 {
+  text-align: center;
+}
+
+.userInfoBlock > ul > li > span {
+  margin-right: 10px;
+  font-weight: bold;
+}
