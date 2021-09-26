@@ -8,14 +8,8 @@ import styles from './FilterByState.module.css';
 
 export const FilterByState = () => {
   const [visiblePopup, setVisiblePopup] = React.useState(false);
-  const { allUsers } = useSelector((state) => state);
+  const { usersAdressStates: states } = useSelector((state) => state);
   const dispatch = useDispatch();
-
-  const allStatesFromAllUsers = allUsers.map((user) => {
-    return user.adress.state;
-  });
-
-  const statesArray = [...new Set(allStatesFromAllUsers)];
 
   const handleClickPopup = () => {
     setVisiblePopup((value) => !value);
@@ -33,7 +27,7 @@ export const FilterByState = () => {
         <ArrowButton className={visiblePopup ? 'asc' : 'desc'} color='#fff' />
       </div>
 
-      {visiblePopup && <FilterPopup states={statesArray} setFilterByState={setFilterByState} />}
+      {visiblePopup && <FilterPopup states={states} setFilterByState={setFilterByState} />}
     </div>
   );
 };

@@ -14,7 +14,7 @@ export const UserInfo = ({ user }) => {
   return (
     <div className={styles.userInfoBlock}>
       <h3>
-        Information about selected user - {`${user.firstName}`}_{`${user.lastName}`}:
+        Information about {`${user.firstName}`}_{`${user.lastName}`}:
       </h3>
 
       <ul>
